@@ -7,22 +7,20 @@
     <title>groupie-tracker</title>
 </head>
 <body>
-    <div class="bar"> 
-    <h1 class="font"><strong>artists</strong></h1>
-    </div>
-    <div class="container">
+    <h1><strong>artists</strong></h1>
+    <div>
       
         
         {{range .}}
             {{if and (ne .Id 21) (ne .Id 43)}}
             
-            <a href="/artist/{{.Id}}">
              
-            <section class="actor" >
-                <div>
+            <section class="box">
+                <div class="content">
                     <img src="{{.Image}}" alt="{{.Name}}">                   
+                <h2>{{.Name}}</h2>
+                <a href="/artist/{{.Id}}">see artist</a>
                 </div>
-                <h2 class="nam">{{.Name}}</h2>
             </section>
         </a>
             
@@ -30,7 +28,4 @@
         {{end}}
     </div>
 </body>
-<footer>
-    <strong>creat By <a href="https://github.com/Boutamgharine2"> ANOUAR BOUTAMGHARINE</a></strong>
-</footer> 
 </html>
