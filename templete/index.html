@@ -7,25 +7,23 @@
     <title>groupie-tracker</title>
 </head>
 <body>
-    <h1><strong>artists</strong></h1>
-    <div>
-      
-        
-        {{range .}}
-            {{if and (ne .Id 21) (ne .Id 43)}}
-            
-             
-            <section class="box">
-                <div class="content">
-                    <img src="{{.Image}}" alt="{{.Name}}">                   
-                <h2>{{.Name}}</h2>
-                <a href="/artist/{{.Id}}">see artist</a>
-                </div>
-            </section>
-        </a>
-            
+    <div class="container">
+        <h1><strong>artists</strong></h1>
+        <div class="artist-grid">
+            {{range .}}
+                {{if and (ne .Id 21) (ne .Id 43)}}
+                    <div class="artist-item">
+                        <div class="box">
+                            <div class="content">
+                                <img src="{{.Image}}" alt="{{.Name}}">
+                                <h2>{{.Name}}</h2>
+                                <a href="/artist/{{.Id}}">see artist</a>
+                            </div>
+                        </div>
+                    </div>
+                {{end}}
             {{end}}
-        {{end}}
+        </div>
     </div>
 </body>
 </html>
