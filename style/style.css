@@ -221,11 +221,10 @@ h1 {
     margin-bottom: 15px;
     font-size: 1.5rem;
 }
-/* New styles for the Go Back button */
 .go-back-btn {
-    position: absolute;
-    top: 20px;
-    left: 20px;
+    display: block;
+    width: fit-content;
+    margin: 30px auto 0; /* Center horizontally and add top margin */
     padding: 10px 20px;
     background: #ef233c;
     color: #ffffff;
@@ -235,7 +234,7 @@ h1 {
     font-size: 1em;
     text-transform: uppercase;
     letter-spacing: 0.05em;
-    transition: 0.5s;
+    transition: 0.3s;
 }
 
 .go-back-btn:hover {
@@ -243,21 +242,22 @@ h1 {
     letter-spacing: 0.1em;
 }
 
-/* Update container style to accommodate the button */
+/* Update container style */
 .container {
-    position: relative;
     width: 100%;
     max-width: 1400px;
     padding: 20px;
-    padding-top: 60px; /* Add space at the top for the button */
+    margin: 0 auto; /* Center the container */
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Ensure the container takes at least the full viewport height */
 }
-
 
 @media (max-width: 1200px) {
     .artist-grid {
         grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     }
-}
+} 
 
 @media (max-width: 768px) {
     .artist-grid {
