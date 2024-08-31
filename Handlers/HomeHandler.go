@@ -7,35 +7,27 @@ import (
 	groupie "groupie/data"
 )
 
-func HomeHandler(w http.ResponseWriter, r *http.Request) {
+func HomeHandler(w http.ResponseWriter, r *http.Request) { // fonction pour traiter les informations necessaire dans la premiere page
 	var tableau []groupie.Band
 	url := "https://groupietrackers.herokuapp.com/api/artists"
 
-	if r.URL.Path != "/" || r.URL.Path == "/style" {
-
-		tmp, err := template.ParseFiles("templete/error.html")
-		if err != nil {
-			http.Error(w, "error", http.StatusInternalServerError)
-			return
-		}
-		w.WriteHeader(404)
-
-		err = tmp.Execute(w, nil)
-		if err != nil {
-			http.Error(w, "serveur error", http.StatusInternalServerError)
-			return
-		}
-		return
-
-	}
-
-	if  r.Method != http.MethodGet {
-		http.Error(w, "Method not allowed", http.StatusMethodNotAllowed)
+	if r.URL.Path != "/" {
+		ErrorHandler(w, r, http.StatusNotFound, "page Not found")
 		return
 	}
 
-	data := Handler(url, tableau)
-	tmpl := template.Must(template.ParseFiles("templete/index.html"))
+	if r.Method != http.MethodGet {
+		ErrorHandler(w, r, http.StatusMethodNotAllowed, "Method not allowed")
+
+		return
+	}
+
+	data := Handler(url, tableau) // decodé les donnès jeson et les stocker dans le variable tableau
+	tmpl, err := template.ParseFiles("templete/index.html")
+	if err != nil {
+		ErrorHandler(w, r, http.StatusInternalServerError, "Internal Server Error")
+		return
+	}
 
 	tmpl.Execute(w, data)
 }

@@ -2,22 +2,14 @@ package groupie
 
 import (
 	"net/http"
-	"text/template"
 )
 
 func StyleHandler(w http.ResponseWriter, r *http.Request) {
 	if r.URL.Path == "/style/" {
-		tmp, err := template.ParseFiles("templete/error.html")
-		if err != nil {
-			http.Error(w, "error", http.StatusInternalServerError)
-			return
-		}
-		w.WriteHeader(404)
-		tmp.Execute(w, nil)
+		ErrorHandler(w, r, http.StatusNotFound, "page not Found")
 		return
-
 	}
 
-	fs := http.FileServer(http.Dir("./style/"))
+	fs := http.FileServer(http.Dir("./style/")) // server les fichiès statique à partir de le repertoire specifique
 	http.StripPrefix("/style/", (fs)).ServeHTTP(w, r)
 }
