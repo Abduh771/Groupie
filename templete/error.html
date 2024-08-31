@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>404 Page Not Found</title>
+    <title>something is wrong</title>
     <style>
         body {
             display: flex;
@@ -45,7 +45,8 @@
 </head>
 <body>
     <div class="container">
-        <h1>404</h1>
+        <h1>{{.Code}}</h1>
+        <p>{{.Error}}</p>
         <p>Oops! It seems this page is not available.</p>
         <p><a href="/">Return to Homepage</a></p>
     </div>
