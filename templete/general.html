@@ -4,19 +4,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/style/style.css">
-    <link rel="icon" type="image/png" href="image/favicon.png">
     <title>Groupie Tracker</title>
 </head>
 <body>
     <div class="container">
         <div>
-            <h1><strong>General Information about the Artist</strong></h1>
+            <h1>ARTIST'S DISCOGRAPHY</h1>
             <div class="artist-card">
                 <img src="{{.Information.Image}}" alt="{{.Information.Name}}">
                 <h2>{{.Information.Name}}</h2>
-                <p><strong>First Album:</strong> {{.Information.FirstAlbum}}</p>
-                <p><strong>Creation Date:</strong> {{.Information.CreationDate}}</p>
-                <p><strong>Members:</strong></p>
+                <p>First Album: {{.Information.FirstAlbum}}</p>
+                <p>Creation Date: {{.Information.CreationDate}}</p>
+                <p>Members:</p>
                 <ul>
                     {{range .Information.Members}}
                         <li>{{.}}</li>

@@ -8,17 +8,29 @@
     <title>groupie-tracker</title>
 </head>
 <body>
-    <div class="container">
-        <h1><strong>artists</strong></h1>
+    <header>
+        <h2 class="logo">Groupie-Tracker</h2>
+        <nav class="navigation">
+            <a href="#about">About</a>
+        </nav>
+    </header>
+    
+    <div class="hero-section">
+        <h1>Welcome to Groupie Tracker!</h1>
+        <button class="explore-btn">Explore Artists</button>
+    </div>
+
+    <div class="container" id="artists">
+        <h2><strong>Artists</strong></h2>
         <div class="artist-grid">
             {{range .}}
-                {{if and (ne .Id 21) (ne .Id 43)}}
+                {{if (ne .Id 21) }}
                     <div class="artist-item">
                         <div class="box">
                             <div class="content">
                                 <img src="{{.Image}}" alt="{{.Name}}">
-                                <h2>{{.Name}}</h2>
-                                <a href="/artist/{{.Id}}">see artist</a>
+                                <h3>{{.Name}}</h3>
+                                <a href="/artist/{{.Id}}">See artist</a>
                             </div>
                         </div>
                     </div>
@@ -26,5 +38,11 @@
             {{end}}
         </div>
     </div>
+
+    <script>
+        document.querySelector('.explore-btn').addEventListener('click', function() {
+            document.getElementById('artists').scrollIntoView({ behavior: 'smooth' });
+        });
+    </script>
 </body>
 </html>
