@@ -5,7 +5,7 @@
 }
 
 body {
-    background: linear-gradient(to left, #ffffff, #000000);
+    background: linear-gradient(to left, #ffffff, #22a8a3);
     min-height: 100vh;
     display: flex;
     flex-direction: column;
@@ -25,7 +25,7 @@ header {
 .logo {
     font-family: "Gluten", cursive;
     font-size: 40px;
-    color: #1f523c;
+    color: #0a130f;
     text-shadow: 0 -0.5vmin 0.2vmin #ffffff, -0.1vmin 0.7vmin 0.3vmin #172c41;
     cursor: pointer;
 }
@@ -63,7 +63,7 @@ header {
     margin-top: 20px;
     margin-bottom: 20px;
     text-shadow: 0 -0.5vmin 0.2vmin #ffffff, -0.1vmin 0.7vmin 0.3vmin #172c41;
-    color: #85a7b1;
+    color: #203a42;
 }
 
 .button-container {
@@ -77,7 +77,7 @@ header {
 .go-back-btn,
 .content a {
     background-color: #fbeee0;
-    border: 2px solid #422800;
+    border: 2px solid #5d541c;
     border-radius: 30px;
     box-shadow: #422800 4px 4px 0 0;
     color: #422800;
@@ -85,11 +85,12 @@ header {
     display: inline-block;
     font-weight: 600;
     font-size: 18px;
-    padding: 0 18px;
-    line-height: 50px;
+    padding: 10px 20px; /* Adjusted padding */
     text-align: center;
     text-decoration: none;
     transition: 0.3s;
+    width: 100%; /* Full width for buttons */
+    max-width: 200px; /* Maximum button width */
 }
 
 .explore-button:hover,
@@ -109,7 +110,6 @@ header {
 
 .go-back-btn {
     margin: 20px auto;
-    width: 200px;
     display: block;
 }
 
@@ -117,7 +117,7 @@ header {
     font-size: 9vmin;
     text-align: center;
     margin-top: 20px;
-    color: #85a7b1;
+    color: #0c2d13;
 }
 
 .artist-grid {
@@ -138,7 +138,7 @@ header {
     position: relative;
     width: 100%;
     padding-bottom: 100%;
-    background: rgba(0, 0, 0, 0.5);
+    background: #000000;
     border-radius: 50%;
     overflow: hidden;
 }
@@ -147,7 +147,7 @@ header {
     content: '';
     position: absolute;
     inset: -10% 23%;
-    background: linear-gradient(315deg, #e5ff00, #1b4b2b);
+    background: linear-gradient(315deg, #229e58, #8943b8);
     transition: 0.5s;
     animation: animate 4s linear infinite;
 }
@@ -232,11 +232,11 @@ h1 {
 }
 
 .artist-card {
-    background-color: rgba(141, 37, 37, 0.1);
+    background-color: #296671 ;
     border-radius: 10px;
     padding: 20px;
     margin-bottom: 20px;
-    box-shadow: 0 4px 6px rgba(219, 45, 45, 0.1);
+    box-shadow: 0 4px 6px #0000;
 }
 
 .artist-card img {
@@ -246,12 +246,12 @@ h1 {
     object-fit: cover;
     border-radius: 50%;
     margin: 0 auto 20px;
-    border: 3px solid #85a7b1;
+    border: 3px solid #000000;
 }
 
 .artist-card h2 {
     font-family: "Gluten", cursive;
-    color: #21522d;
+    color: #000000;
     text-align: center;
     margin-bottom: 15px;
     font-size: 1.8em;
@@ -276,7 +276,7 @@ h1 {
 
 .info-section h2 {
     font-size: 1.4em;
-    color: #7363b9;
+    color: #0e1317;
     margin-bottom: 10px;
 }
 
@@ -294,7 +294,7 @@ h1 {
 .error-container h1 {
     font-family: "Gluten", cursive;
     font-size: 8em;
-    color: #85a7b1;
+    color: #3b5c66;
     margin-bottom: 20px;
     text-shadow: 0 -0.2vmin 0.1vmin #ffffff, -0.05vmin 0.3vmin 0.15vmin #172c41;
 }
@@ -310,6 +310,7 @@ h1 {
     margin-top: 20px;
 }
 
+/* Media Queries */
 @media (max-width: 768px) {
     header {
         padding: 20px 30px;
@@ -319,32 +320,17 @@ h1 {
         font-size: 32px;
     }
 
-    .button-container {
-        flex-direction: column;
-        align-items: center;
-    }
-
     .explore-button,
-    .artists-button,
-    .go-back-btn,
-    .content a {
-        width: 100%;
-        max-width: 200px;
+    .go-back-btn {
         font-size: 16px;
-        padding: 0 15px;
-        line-height: 40px;
+        padding: 10px; 
     }
 
     .artist-grid {
         grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
     }
-    
-    .content h2 {
-        font-size: 1rem;
-    }
 
-    .title,
-    .explore-button {
+    .title {
         font-size: 7vmin;
     }
 
@@ -380,15 +366,6 @@ h1 {
 
     .artist-grid {
         grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-    }
-    
-    .content h2 {
-        font-size: 0.9rem;
-    }
-
-    .title,
-    .explore-button {
-        font-size: 6vmin;
     }
 
     .go-back-btn {
