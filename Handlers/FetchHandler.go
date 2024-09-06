@@ -14,22 +14,3 @@ func FetchHandler(url string, data interface{}, id string, w http.ResponseWriter
 	defer response.Body.Close()
 	json.NewDecoder(response.Body).Decode(data)
 }
-
-/*response, err = http.Get(url + "dates/" + id)
-if err != nil {
-	return err
-}
-defer response.Body.Close()
-json.NewDecoder(response.Body).Decode(&data.Dates)
-response, err = http.Get(url + "artists/" + id)
-if err != nil {
-	return err
-}
-defer response.Body.Close()
-json.NewDecoder(response.Body).Decode(&data.Information)
-res, err1 := http.Get(url + "relation/" + id)
-if err1 != nil {
-	return err
-}
-defer response.Body.Close()
-json.NewDecoder(res.Body).Decode(&data.Rolation)*/

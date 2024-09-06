@@ -55,7 +55,7 @@ func ArtistHandler(w http.ResponseWriter, r *http.Request) { // traiter les info
 	}()
 	wg.Wait() // attendre l'exucution de touts les gourotine avant de continue l'execution de programme
 
-	tmpl, err2 := template.ParseFiles("templete/general.html")
+	tmpl, err2 := template.ParseFiles("templete/artist.html")
 	if err2 != nil {
 		ErrorHandler(w, r, http.StatusInternalServerError, "Internal Server Error")
 		return
