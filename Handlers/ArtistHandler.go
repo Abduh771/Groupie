@@ -22,10 +22,10 @@ func ArtistHandler(w http.ResponseWriter, r *http.Request) { // traiter les info
 	}
 
 	id := strings.Trim(r.URL.Path, "/artist/")
-	if len(id) > 500 {
-		ErrorHandler(w, r, http.StatusNotFound, "page Not found")
-		return
-	}
+	// if len(id) > 500 {
+	// 	ErrorHandler(w, r, http.StatusNotFound, "page Not found")
+	// 	return
+	// }
 
 	num, err := strconv.Atoi(id)
 	if err != nil || num <= 0 || num > 52 {
@@ -62,5 +62,7 @@ func ArtistHandler(w http.ResponseWriter, r *http.Request) { // traiter les info
 
 	}
 
-	tmpl.Execute(w, data)
+	if err := tmpl.Execute(w, data); err != nil {
+		http.Error(w, "Internal Server Error", http.StatusInternalServerError)
+	}
 }

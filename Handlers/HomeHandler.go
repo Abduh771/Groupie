@@ -29,5 +29,7 @@ func HomeHandler(w http.ResponseWriter, r *http.Request) { // fonction pour trai
 		return
 	}
 
-	tmpl.Execute(w, data)
+	if err := tmpl.Execute(w, data); err != nil {
+		http.Error(w, "Internal Server Error", http.StatusInternalServerError)
+	}
 }
