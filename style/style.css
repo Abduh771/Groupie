@@ -84,13 +84,13 @@ header {
     cursor: pointer;
     display: inline-block;
     font-weight: 600;
-    font-size: 18px;
-    padding: 10px 20px; /* Adjusted padding */
+    font-size: 16px; 
+    padding: 8px 16px; 
     text-align: center;
     text-decoration: none;
     transition: 0.3s;
-    width: 100%; /* Full width for buttons */
-    max-width: 200px; /* Maximum button width */
+    width: 100%; 
+    max-width: 180px; 
 }
 
 .explore-button:hover,
@@ -321,9 +321,11 @@ h1 {
     }
 
     .explore-button,
-    .go-back-btn {
-        font-size: 16px;
-        padding: 10px; 
+    .go-back-btn,
+    .content a {
+        font-size: 14px; 
+        padding: 6px 12px; 
+        max-width: 150px; 
     }
 
     .artist-grid {
@@ -368,9 +370,11 @@ h1 {
         grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
     }
 
-    .go-back-btn {
-        width: 150px;
-        font-size: 14px;
-        line-height: 40px;
+    .explore-button,
+    .go-back-btn,
+    .content a {
+        font-size: 12px; 
+        padding: 4px 10px; 
+        max-width: 120px;
     }
 }
