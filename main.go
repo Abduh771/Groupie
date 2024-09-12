@@ -11,8 +11,7 @@ import (
 func main() {
 	http.HandleFunc("/", groupie.HomeHandler)
 	http.HandleFunc("/artist/", groupie.ArtistHandler)
-	http.HandleFunc("/style/", groupie.StyleHandler)
-
+	http.HandleFunc("/style/style.css", groupie.StyleHandler)
 	fmt.Println("Server starting on http://localhost:8080")
 	log.Fatal(http.ListenAndServe(":8080", nil))
 }
